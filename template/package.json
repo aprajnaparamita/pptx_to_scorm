@@ -1,0 +1,21 @@
+{
+  "name": "pptxtohtml",
+  "version": "1.0.0",
+  "description": "System for converting poweroint presentations into SCORM packages.",
+  "main": "scormify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scorm",
+    "ruby",
+    "powerpoint",
+    "pptx",
+    "html5"
+  ],
+  "author": "Janet Jeffus",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mustache (1.1.0)
+    rubyzip (1.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mustache
+  rubyzip
+
+BUNDLED WITH
+   1.16.6

@@ -1,0 +1,30 @@
+
+.tf_slide:nth-child(1){
+  background: palegoldenrod;
+}
+.tf_slide:nth-child(2){
+  background: indianred;
+}
+.tf_slide:nth-child(3){
+  background: olive;
+}
+.tf_slide:nth-child(4){
+  background: aliceblue;
+}
+.tf_slide:nth-child(5){
+  background: darkkhaki;
+}
+.tf_slide:nth-child(6){
+  background: skyblue;
+}
+.tf_slide:nth-child(7){
+  background: orange;
+}
+@keyframes fadeUp{
+  0%{transform: translateY(20%);}
+  100%{transform: translateY(0); visibility: visible}
+}
+@-webkit-keyframes fadeUp{
+  0%{-webkit-transform: translateY(20%);}
+  100%{-webkit-transform: translateY(0); visibility: visible}
+}
