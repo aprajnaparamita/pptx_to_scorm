@@ -14,7 +14,7 @@ STDERR.puts "Copy template => #{dest}"
 FileUtils.cp_r "template", dest
 Dir["#{dir}/*.PNG"].each do |file|
   STDERR.puts "Copy #{file} => #{dest}/img"
-  FileUtils.cp file, "#{dest}/img"
+  FileUtils.cp file, "#{dest}/img/"
   STDERR.puts "Creating thumb #{file} => #{dest}/img/thumb"
   name = file.split(/\//).last
   system "/usr/bin/convert", "-scale", "200x", file, "#{dest}/img/thumb/#{name}"
@@ -63,7 +63,7 @@ puts list
 template_file = "#{dest}/index.html"
 template = File.read template_file
 STDERR.puts "Writing template file: #{template_file}"
-template_out = Mustache.render(template, title: title, description: description, slides: list)
+template_out = Mustache.render(template, title: title, description: description, slides: list, images: images)
 File.open(template_file, "w") do |f|
   f.write template_out
 end

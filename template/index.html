@@ -18,16 +18,33 @@
 </head>
 <body>
     <div id="content">
-        <header>
-            <h1>{{title}}</h1>
-            <p class="intro">{{introduction}}</p>
-        </header>
         {{{slides}}}
     </div>
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/zenith.js"></script>
     <script type="text/javascript">
-      $(document).ready(function(){
+    function preloadImages(urls, allImagesLoadedCallback){
+        var loadedCounter = 0;
+      var toBeLoadedNumber = urls.length;
+      urls.forEach(function(url){
+        preloadImage(url, function(){
+            loadedCounter++;
+                console.log('Number of loaded images: ' + loadedCounter);
+          if(loadedCounter == toBeLoadedNumber){
+            allImagesLoadedCallback();
+          }
+        });
+      });
+      function preloadImage(url, anImageLoadedCallback){
+          var img = new Image();
+          img.onload = anImageLoadedCallback;
+          img.src = url;
+      }
+    }
+
+    $(document).ready(function(){
+      preloadImages({{{images}}}, function(){
+        console.log('All images were loaded');
         $('#third').zenith({
               layout: 'slider',
               width: '100%',
@@ -40,9 +57,9 @@
               navPosition: 'right',
               direction: 'vertical'
         });
+        });
       });
     </script>
 
-</body>
 </body>
 </html>
